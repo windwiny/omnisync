@@ -8,6 +8,7 @@ import optparse
 import time
 import locale
 
+import omnisync
 from omnisync.configuration import Configuration
 from omnisync.progress import Progress
 
@@ -34,14 +35,7 @@ class OmniSync(object):
         self.bytes_total = 0
 
         transp_dir = "transports"
-        # If we have been imported, get the path.
-        if __name__ != "__main__":
-            os_dir = os.path.dirname(os.path.join(os.getcwd(), __file__))
-            basedir = os.path.join(os_dir, transp_dir)
-            sys.path.append(os_dir)
-        else:
-            basedir = transp_dir
-
+        basedir = os.path.join(os.path.dirname(omnisync.__file__), transp_dir)
         # Import the I/O module classes.
         for module in os.listdir(basedir):
             if module.endswith(".py"):

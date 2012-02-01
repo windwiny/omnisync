@@ -13,7 +13,7 @@ bandwidth-efficient. It is available for Linux, Windows and Mac.
 As an example, to sync files from an S3 volume to an sftp server, all
 you need to do is this:
 
-    omnisync -r s3://s3bucket/ sftp://myserver/mydir
+    python -m omnisync.main -r s3://s3bucket/ sftp://myserver/mydir
 
 and omnisync will synchronize the two directories. Of course, what
 makes omnisync special is its extensibility. You can easily write a
