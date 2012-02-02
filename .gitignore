@@ -18,4 +18,6 @@
 ehthumbs.db
 Icon?
 Thumbs.db
-build
+/build
+/dist
+/omnisync.egg-info
